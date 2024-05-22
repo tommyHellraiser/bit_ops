@@ -39,8 +39,8 @@ implement_bitwise_ops!(Bits32);
 implement_bitwise_ops!(Bits64);
 implement_bitwise_ops!(Bits128);
 
-//  ---- Implement From traits
 
+//  ---- Implement From traits
 //  Implement From any for Bits8
 implement_from_traits!(Bits8, Bits8Type, (Bits16, Bits32, Bits64, Bits128));
 //  Implement From any for Bits16

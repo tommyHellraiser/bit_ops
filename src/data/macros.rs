@@ -6,6 +6,33 @@ macro_rules! implement_bitwise_ops {
             fn bitwise_and(self, other: $self_type) -> $self_type {
                 Self(self.0 & other.0)
             }
+            fn bitwise_or(self, other: $self_type) -> $self_type {
+                Self(self.0 | other.0)
+            }
+            fn bitwise_xor(self, other: $self_type) -> $self_type {
+                Self(self.0 ^ other.0)
+            }
+            fn bitwise_not(self) -> $self_type {
+                Self(!self.0)
+            }
+            fn shift_left(self, amount: usize) -> $self_type {
+                Self(self.0 << amount)
+            }
+            fn shift_right(self, amount: usize) -> $self_type {
+                Self(self.0 >> amount)
+            }
+            fn set_bit(self, bit: usize) -> $self_type {
+                Self(self.0 | (1 << bit))
+            }
+            fn clear_bit(self, bit: usize) -> $self_type {
+                Self(self.0 & !(1 << bit))
+            }
+            fn toggle_bit(self, bit: usize) -> $self_type {
+                Self(self.0 ^ (1 << bit))
+            }
+            fn is_bit_set(&self, bit: usize) -> bool {
+                (self.0 & 1 << bit) == 0
+            }
         }
     };
 }
