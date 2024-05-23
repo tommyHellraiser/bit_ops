@@ -1,7 +1,7 @@
 mod data;
 pub use data::structs;
-use crate::data::traits::BitwiseOps;
 use crate::structs::{Bits16, Bits32, Bits8};
+pub use data::traits::BitwiseOps;
 
 pub fn test() {
     
@@ -19,6 +19,8 @@ pub fn test() {
     dbg!(&result_32.as_hex());
     dbg!(&result_32.as_hex_uppercase());
     dbg!(&result_32.as_binary());
+
+
 }
 
 #[cfg(test)]
